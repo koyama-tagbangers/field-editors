@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Menu, Button } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@koyama-tagbangers/rich-text-types';
 import { css, cx } from 'emotion';
 
 import { useContentfulEditor } from '../../../ContentfulEditorProvider';
@@ -43,6 +43,10 @@ const styles = {
     [BLOCKS.HEADING_6]: css`
       font-size: 0.875rem;
     `,
+    [BLOCKS.CAPTION]: css`
+      font-size: 0.875rem;
+      font-weight: ${tokens.fontWeightMedium};
+    `,
   },
 };
 
@@ -54,6 +58,7 @@ const LABELS = {
   [BLOCKS.HEADING_4]: 'Heading 4',
   [BLOCKS.HEADING_5]: 'Heading 5',
   [BLOCKS.HEADING_6]: 'Heading 6',
+  [BLOCKS.CAPTION]: 'Caption',
 };
 
 export interface ToolbarHeadingButtonProps {
@@ -124,7 +129,8 @@ export function ToolbarHeadingButton(props: ToolbarHeadingButtonProps) {
           variant="transparent"
           endIcon={<ChevronDownIcon />}
           isDisabled={props.isDisabled}
-          onClick={() => someHeadingsEnabled && setOpen(!isOpen)}>
+          onClick={() => someHeadingsEnabled && setOpen(!isOpen)}
+        >
           {LABELS[selected]}
         </Button>
       </Menu.Trigger>
@@ -139,7 +145,8 @@ export function ToolbarHeadingButton(props: ToolbarHeadingButtonProps) {
                   isInitiallyFocused={selected === nodeType}
                   onClick={handleOnSelectItem(nodeType as BLOCKS)}
                   testId={`dropdown-option-${nodeType}`}
-                  disabled={props.isDisabled}>
+                  disabled={props.isDisabled}
+                >
                   <span className={cx(styles.dropdown.root, styles.dropdown[nodeType])}>
                     {LABELS[nodeType]}
                   </span>

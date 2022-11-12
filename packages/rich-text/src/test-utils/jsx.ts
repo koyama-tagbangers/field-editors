@@ -1,4 +1,4 @@
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@koyama-tagbangers/rich-text-types';
 import { createText } from '@udecode/plate-test-utils';
 import { createHyperscript, HyperscriptCreators } from 'slate-hyperscript';
 
@@ -87,6 +87,7 @@ export const jsx = createHyperscript({
     hh4: { type: BLOCKS.HEADING_4, data: {} },
     hh5: { type: BLOCKS.HEADING_5, data: {} },
     hh6: { type: BLOCKS.HEADING_6, data: {} },
+    hcaption: { type: BLOCKS.CAPTION, data: {} },
     hli: { type: BLOCKS.LIST_ITEM, data: {} },
     hol: { type: BLOCKS.OL_LIST, data: {} },
     hp: { type: BLOCKS.PARAGRAPH, data: {} },

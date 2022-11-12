@@ -1,5 +1,5 @@
 import { helpers, BLOCKS } from '@contentful/rich-text-types';
-import { getSchemaWithNodeType } from '@contentful/rich-text-types/dist/schemas';
+import { getSchemaWithNodeType } from '@koyama-tagbangers/rich-text-types/dist/schemas';
 import Ajv, { ErrorObject } from 'ajv';
 
 const ajv = new Ajv({ allErrors: true, verbose: true });

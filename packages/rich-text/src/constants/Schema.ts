@@ -4,7 +4,7 @@ import {
   TOP_LEVEL_BLOCKS,
   VOID_BLOCKS,
   CONTAINERS,
-} from '@contentful/rich-text-types';
+} from '@koyama-tagbangers/rich-text-types';
 
 const inlines = Object.values(INLINES).map((type) => ({ type }));
 
@@ -61,6 +61,13 @@ export default {
       ],
     },
     [BLOCKS.HEADING_6]: {
+      nodes: [
+        {
+          match: [...inlines, { object: 'text' }],
+        },
+      ],
+    },
+    [BLOCKS.CAPTION]: {
       nodes: [
         {
           match: [...inlines, { object: 'text' }],

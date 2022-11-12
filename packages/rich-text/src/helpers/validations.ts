@@ -1,6 +1,6 @@
 /* eslint-disable you-dont-need-lodash-underscore/find */
 import { FieldExtensionSDK } from '@contentful/app-sdk';
-import { BLOCKS, INLINES, TOP_LEVEL_BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES, TOP_LEVEL_BLOCKS } from '@koyama-tagbangers/rich-text-types';
 import find from 'lodash/find';
 import flow from 'lodash/flow';
 import get from 'lodash/get';
@@ -10,7 +10,12 @@ export const VALIDATIONS = {
   ENABLED_MARKS: 'enabledMarks',
   ENABLED_NODE_TYPES: 'enabledNodeTypes',
 };
-export const DEFAULT_ENABLED_NODE_TYPES = [BLOCKS.DOCUMENT, BLOCKS.PARAGRAPH, 'text'];
+export const DEFAULT_ENABLED_NODE_TYPES = [
+  BLOCKS.DOCUMENT,
+  BLOCKS.PARAGRAPH,
+  'text',
+  BLOCKS.CAPTION, // Custom Type
+];
 
 export const VALIDATABLE_NODE_TYPES = ([] as Array<BLOCKS | INLINES>)
   .concat(TOP_LEVEL_BLOCKS)

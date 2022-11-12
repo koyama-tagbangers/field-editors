@@ -26,6 +26,8 @@ declare namespace JSX {
     hh5: {};
     hh6: {};
 
+    hcaption: {};
+
     hinline: {
       type: 'Entry';
       id: string;
